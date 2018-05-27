@@ -16,7 +16,7 @@ use yii\validators\IpValidator as BaseIpValidator;
  * ```php
  *      public function rules() {
  *          return [
- *              ['telAttr', 'ipvn', 'message' => 'Ip phải là ip Việt Nam!']
+ *              ['ipAttr', 'ipvn', 'message' => 'Ip phải là ip Việt Nam!']
  *          ];
  *      }
  * ```

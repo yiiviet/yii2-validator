@@ -16,7 +16,7 @@ use yii\validators\RegularExpressionValidator;
  * ```php
  *      public function rules() {
  *          return [
- *              ['telAttr', 'idnumvn', 'message' => 'Chứng minh nhân dân không hợp lệ.']
+ *              ['idAttr', 'idnumvn', 'message' => 'Chứng minh nhân dân không hợp lệ.']
  *          ];
  *      }
  * ```
@@ -26,7 +26,7 @@ use yii\validators\RegularExpressionValidator;
  * ```php
  *      public function rules() {
  *          return [
- *              ['telAttr', 'idnumvn', 'message' => 'Chứng minh nhân dân hoặc thẻ căn cước không hợp lệ.', 'onlyId' => false]
+ *              ['idAttr', 'idnumvn', 'message' => 'Chứng minh nhân dân hoặc thẻ căn cước không hợp lệ.', 'onlyId' => false]
  *          ];
  *      }
  * ```

@@ -16,7 +16,7 @@ use kdn\yii2\validators\DomainValidator as BaseDomainValidator;
  * ```php
  *      public function rules() {
  *          return [
- *              ['telAttr', 'domainvn', 'message' => 'Tên miền không phải miền VN!']
+ *              ['domainAttr', 'domainvn', 'message' => 'Tên miền không phải miền VN!']
  *          ];
  *      }
  * ```
