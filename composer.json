@@ -1,0 +1,30 @@
+{
+    "name": "yiiviet/yii2-validator",
+    "description": "Extension hổ trợ các validator dữ liệu đặc thù trong nước.",
+    "type": "yii2-extension",
+    "keywords": ["yii2","validator","Viet Nam validator"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Vuong Minh",
+            "email": "vuongxuongminh@gmail.com"
+        }
+    ],
+    "require": {
+        "php":">=5.5",
+        "yiisoft/yii2": "~2.0.7",
+        "kdn/yii2-domain-validator": "*",
+        "fzaninotto/faker": "^1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "yiiviet\\validator\\": "src"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}
