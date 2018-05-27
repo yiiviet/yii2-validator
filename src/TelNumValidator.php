@@ -158,6 +158,7 @@ class TelNumValidator extends RegularExpressionValidator
 
     /**
      * Phương thức kiểm tra telco (nhà mạng) có phải là thành phần cần kiểm tra hay không.
+     * Nó được trích từ [yii\base\ActionFilter::isActive()].
      *
      * @param string $telco Tên nhà mạng cần kiểm tra
      * @return bool Trả về `TRUE` nếu như telco la thành phần kiểm tra.
@@ -203,6 +204,9 @@ class TelNumValidator extends RegularExpressionValidator
         }
     }
 
+    /**
+     * @inheritdoc
+     */
     public function validateValue($value)
     {
         $value = preg_replace('/[^0-9]/', '', $value);
