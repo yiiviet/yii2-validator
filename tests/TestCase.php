@@ -24,7 +24,6 @@ class TestCase extends BaseTestCase
 {
 
 
-
     public function setUp()
     {
         $this->mockApplication();
@@ -47,7 +46,7 @@ class TestCase extends BaseTestCase
             'bootstrap' => [
                 Bootstrap::class
             ],
-            'vendorPath' => dirname(__DIR__, 2) . '/vendor',
+            'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
         ], $config));
     }
 
