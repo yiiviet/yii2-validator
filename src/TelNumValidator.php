@@ -29,7 +29,7 @@ use yii\validators\RegularExpressionValidator;
  * ```php
  *      public function rules() {
  *          return [
- *              ['telAttr', 'telnumvn', 'message' => 'Số điện thoại phải là số trong nước', 'mobileOnly' => true]
+ *              ['telAttr', 'telnumvn', 'message' => 'Số điện thoại phải là số trong nước', 'exceptTelco' => 'landLine']
  *          ];
  *      }
  * ```
@@ -39,22 +39,12 @@ use yii\validators\RegularExpressionValidator;
  * ```php
  *      public function rules() {
  *          return [
- *              ['telAttr', 'telnumvn', 'message' => 'Số điện thoại phải là số trong nước', 'landLineOnly' => true]
+ *              ['telAttr', 'telnumvn', 'message' => 'Số điện thoại phải là số trong nước', 'onlyTelco' => 'landLine']
  *          ];
  *      }
  * ```
  *
- * Chi kiểm tra số điện thoại viettel
- *
- * ```php
- *      public function rules() {
- *          return [
- *              ['telAttr', 'telnumvn', 'message' => 'Số điện thoại phải là số trong nước', 'pattern' => 'viettel']
- *          ];
- *      }
- * ```
- *
- * danh sách các nhà mạng (pattern) hổ trợ: mobi, vina, viettel, vnmobi, gmobile, beeline, vsat, indochina
+ * danh sách các telco (nhà mạng) hổ trợ: mobiFone, vinaPhone, viettel, vietNamMobile, gMobile, beeline, vsat, indoChina, landLine.
  *
  * Sử dụng trong DynamicModel tương tự.
  *
