@@ -14,7 +14,7 @@ Chính vì vậy extension này được xây dựng nên để cung cấp các 
 cơ bản tại nước ta.
 
 
-Các kiểu validator hiện được hổ trợ:
+Các kiểu dữ liệu hiện được hổ trợ:
 
 * Số điện thoại bao gồm số di động và số bàn.
 * Chứng minh thư và thẻ căn cước.
