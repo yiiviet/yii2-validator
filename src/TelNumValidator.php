@@ -72,47 +72,47 @@ class TelNumValidator extends RegularExpressionValidator
     /**
      * @var string Pattern kiểm tra số viettel.
      */
-    public $viettel = '^(84|0)?(9[6-8]|16[2-9]|86)\d{7}$';
+    public $viettel = '^(\+?84|0)?(9[6-8]|16[2-9]|86)\d{7}$';
 
     /**
      * @var string Pattern kiểm tra số vinaphone.
      */
-    public $vinaPhone = '^(84|0)?(9[14]|12[3-5]|12[79]|88)\d{7}$';
+    public $vinaPhone = '^(\+?84|0)?(9[14]|12[3-5]|12[79]|88)\d{7}$';
 
     /**
      * @var string Pattern kiểm tra số mobiphone.
      */
-    public $mobiFone = '^(84|0)?(9[03]|12[0-2]|12[68]|89)\d{7}$';
+    public $mobiFone = '^(\+?84|0)?(9[03]|12[0-2]|12[68]|89)\d{7}$';
 
     /**
      * @var string Pattern kiểm tra số vnmobi.
      */
-    public $vietNamMobile = '^(84|0)?(92|18[68]|82)[\d]{7}$';
+    public $vietNamMobile = '^(\+?84|0)?(92|18[68]|82)[\d]{7}$';
 
     /**
      * @var string Pattern kiểm tra số gmobile.
      */
-    public $gMobile = '^(84|0)?199[\d]{7}$';
+    public $gMobile = '^(\+?84|0)?199[\d]{7}$';
 
     /**
      * @var string Pattern kiểm tra số beeline.
      */
-    public $beeline = '^(84|0)?99[3-7][\d]{7}$';
+    public $beeline = '^(\+?84|0)?99[3-7][\d]{7}$';
 
     /**
      * @var string Pattern kiểm tra số vsat.
      */
-    public $vsat = '^(84|0)?992[\d]{7}$';
+    public $vsat = '^(\+?84|0)?992[\d]{7}$';
 
     /**
      * @var string Pattern kiểm tra số indochina.
      */
-    public $indoChina = '^(84|0)?99[89][\d]{7}$';
+    public $indoChina = '^(\+?84|0)?99[89][\d]{7}$';
 
     /**
      * @var string Pattern kiểm tra số điện thoại bàn.
      */
-    public $landLine = '^(84|0)?(((20[3-9]|21[0-6]|21[89]|22[0-2]|22[5-9]|23[2-9]|24[2-5]|248|25[12]|25[4-9]|26[0-3]|27[0-7]|28[2-5]|29([0-4]|[67])|299)\d{7})|((246[236]|247[13]|286[23]|287[13])\d{6}))$';
+    public $landLine = '^(\+?84|0)?(((20[3-9]|21[0-6]|21[89]|22[0-2]|22[5-9]|23[2-9]|24[2-5]|248|25[12]|25[4-9]|26[0-3]|27[0-7]|28[2-5]|29([0-4]|[67])|299)\d{7})|((246[236]|247[13]|286[23]|287[13])\d{6}))$';
 
     /**
      * @var bool|string Thiết lập kiểu `format` di động thêm '0' sau khi thực thi kiểm tra hoàn tất (dữ liệu attr hợp lệ).
@@ -185,7 +185,7 @@ class TelNumValidator extends RegularExpressionValidator
     {
         if (($result = parent::validateAttribute($model, $attribute)) === null) {
             if ($this->mobileFormat) {
-                $model->{$attribute} = preg_replace('/^(84|0)?(\d+)$/', '0$2', $model->{$attribute});
+                $model->{$attribute} = preg_replace('/^(\+?84|0)?(\d+)$/', '0$2', $model->{$attribute});
             }
 
             return null;
@@ -194,13 +194,4 @@ class TelNumValidator extends RegularExpressionValidator
         }
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function validateValue($value)
-    {
-        $value = preg_replace('/[^0-9]/', '', $value);
-
-        return parent::validateValue($value);
-    }
 }
