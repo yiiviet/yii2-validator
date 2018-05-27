@@ -2,6 +2,8 @@ checks:
     php:
         code_rating: true
         duplication: true
+        excluded_dependencies:
+            - kdn/yii2-domain-validator
 tools:
     php_code_coverage:
         enabled: true
