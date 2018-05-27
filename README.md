@@ -16,10 +16,10 @@ cơ bản tại nước ta.
 
 Các kiểu validator hiện được hổ trợ:
 
-* [Số điện thoại](https://baokim.vn)
-* [Chứng minh thư (thẻ căn cước)](https://nganluong.vn)
-* [IP Việt Nam](https://onepay.vn)
-* [Tên miền Việt Nam](https://vnpayment.vn)
+* Số điện thoại bao gồm số di động và số bàn.
+* Chứng minh thư và thẻ căn cước.
+* IP Việt Nam
+* Tên miền Việt Nam
 
 
 ## Cài đặt
