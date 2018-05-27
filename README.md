@@ -28,13 +28,13 @@ Cài đặt thông qua `composer` nếu như đó là một khái niệm mới v
 [đây](http://getcomposer.org/download/) để tìm hiểu nó.
 
 ```sh
-composer require "yiiviet/validator"
+composer require "yiiviet/yii2-validator"
 ```
 
 hoặc thêm
 
 ```json
-"yiiviet/validator": "*"
+"yiiviet/yii2-validator": "*"
 ```
 
 vào phần `require` trong file composer.json.
