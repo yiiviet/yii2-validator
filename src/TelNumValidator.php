@@ -8,9 +8,7 @@
 namespace yiiviet\validator;
 
 use yii\base\InvalidConfigException;
-
 use yii\validators\RegularExpressionValidator;
-
 
 /**
  * Lớp TelNumValidator dùng để kiểm tra số điện thoại trong nước có hợp lệ hay không.
@@ -53,6 +51,7 @@ use yii\validators\RegularExpressionValidator;
  */
 class TelNumValidator extends RegularExpressionValidator
 {
+
     /**
      * @var array Mảng chứa tên các telco (nhà mạng). Các nhà mạng nằm trong mảng sẽ là kiểu ràng buộc của dữ liệu.
      * Lưu ý nếu như tên telco cũng nằm ở mảng `exceptTelco` thì mặc định telco đó sẽ bị loại bỏ.
@@ -72,27 +71,27 @@ class TelNumValidator extends RegularExpressionValidator
     /**
      * @var string Pattern kiểm tra số viettel.
      */
-    public $viettel = '^(\+?84|0)?(9[6-8]|16[2-9]|86)\d{7}$';
+    public $viettel = '^(\+?84|0)?(9[6-8]|3[2-9]|86)\d{7}$';
 
     /**
      * @var string Pattern kiểm tra số vinaphone.
      */
-    public $vinaPhone = '^(\+?84|0)?(9[14]|12[3-5]|12[79]|88)\d{7}$';
+    public $vinaPhone = '^(\+?84|0)?(9[14]|8[1-5]|88)\d{7}$';
 
     /**
      * @var string Pattern kiểm tra số mobiphone.
      */
-    public $mobiFone = '^(\+?84|0)?(9[03]|12[0-2]|12[68]|89)\d{7}$';
+    public $mobiFone = '^(\+?84|0)?(9[03]|7[6-8]|7[09]|89)\d{7}$';
 
     /**
      * @var string Pattern kiểm tra số vnmobi.
      */
-    public $vietNamMobile = '^(\+?84|0)?(92|18[68]|82)[\d]{7}$';
+    public $vietNamMobile = '^(\+?84|0)?(92|5[68]|82)[\d]{7}$';
 
     /**
      * @var string Pattern kiểm tra số gmobile.
      */
-    public $gMobile = '^(\+?84|0)?199[\d]{7}$';
+    public $gMobile = '^(\+?84|0)?59[\d]{7}$';
 
     /**
      * @var string Pattern kiểm tra số beeline.
@@ -137,7 +136,7 @@ class TelNumValidator extends RegularExpressionValidator
         }
 
         if (!empty($pattern)) {
-            $this->pattern = "/(" . implode(")|(", $pattern) . ")/";
+            $this->pattern = "~(" . implode(")|(", $pattern) . ")~";
         } else {
             throw new InvalidConfigException('Your telco setup is not valid!');
         }
@@ -187,11 +186,9 @@ class TelNumValidator extends RegularExpressionValidator
             if ($this->mobileFormat) {
                 $model->{$attribute} = preg_replace('/^(\+?84|0)?(\d+)$/', '0$2', $model->{$attribute});
             }
-
-            return null;
-        } else {
-            return $result;
         }
+
+        return $result;
     }
 
 }
