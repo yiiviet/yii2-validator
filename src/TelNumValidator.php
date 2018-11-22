@@ -11,7 +11,9 @@ use yii\base\InvalidConfigException;
 use yii\validators\RegularExpressionValidator;
 
 /**
- * Lớp TelNumValidator dùng để kiểm tra số điện thoại trong nước có hợp lệ hay không.
+ * Lớp TelNumValidator dùng để kiểm tra số điện thoại trong nước có hợp lệ hay không. Nó được phát triển theo tài liệu wiki
+ * link: https://vi.wikipedia.org/wiki/M%C3%A3_%C4%91i%E1%BB%87n_tho%E1%BA%A1i_Vi%E1%BB%87t_Nam
+ *
  * Ví dụ khai báo kiểm tra số điện thoại hợp lệ trong `model`
  *
  * ```php
@@ -71,42 +73,32 @@ class TelNumValidator extends RegularExpressionValidator
     /**
      * @var string Pattern kiểm tra số viettel.
      */
-    public $viettel = '^(\+?84|0)?(9[6-8]|3[2-9]|86)\d{7}$';
+    public $viettel = '^(\+?84|0)?(3[2-9]|86|9[6-8])\d{7}$';
 
     /**
      * @var string Pattern kiểm tra số vinaphone.
      */
-    public $vinaPhone = '^(\+?84|0)?(9[14]|8[1-5]|88)\d{7}$';
+    public $vinaPhone = '^(\+?84|0)?(8[1-5]|88|9[14])\d{7}$';
 
     /**
      * @var string Pattern kiểm tra số mobiphone.
      */
-    public $mobiFone = '^(\+?84|0)?(9[03]|7[6-8]|7[09]|89)\d{7}$';
+    public $mobiFone = '^(\+?84|0)?(70|7[6-9]|89|9[03])\d{7}$';
 
     /**
      * @var string Pattern kiểm tra số vnmobi.
      */
-    public $vietNamMobile = '^(\+?84|0)?(92|5[68]|82)[\d]{7}$';
+    public $vietNamMobile = '^(\+?84|0)?(5[68]|92)[\d]{7}$';
 
     /**
      * @var string Pattern kiểm tra số gmobile.
      */
-    public $gMobile = '^(\+?84|0)?59[\d]{7}$';
-
-    /**
-     * @var string Pattern kiểm tra số beeline.
-     */
-    public $beeline = '^(\+?84|0)?99[3-7][\d]{7}$';
-
-    /**
-     * @var string Pattern kiểm tra số vsat.
-     */
-    public $vsat = '^(\+?84|0)?992[\d]{7}$';
+    public $gMobile = '^(\+?84|0)?[59]9[\d]{7}$';
 
     /**
      * @var string Pattern kiểm tra số indochina.
      */
-    public $indoChina = '^(\+?84|0)?99[89][\d]{7}$';
+    public $indoChina = '^(\+?84|0)?87[\d]{7}$';
 
     /**
      * @var string Pattern kiểm tra số điện thoại bàn.
@@ -129,7 +121,7 @@ class TelNumValidator extends RegularExpressionValidator
         $this->exceptTelco = (array)$this->exceptTelco;
 
         $pattern = [];
-        foreach (['viettel', 'mobiFone', 'vinaPhone', 'indoChina', 'gMobile', 'beeline', 'vsat', 'landLine'] as $telco) {
+        foreach (['viettel', 'mobiFone', 'vinaPhone', 'indoChina', 'gMobile', 'landLine'] as $telco) {
             if ($this->isUse($telco)) {
                 $pattern[] = $this->{$telco};
             }
