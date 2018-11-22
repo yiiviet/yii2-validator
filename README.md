@@ -125,8 +125,6 @@ Danh sách tên các telco (nhà mạng)
 | mobiFone | Mobifone |
 | vietNamMobile | Viet Nam Mobile |
 | gMobile | G Mobile |
-| beeline | Beeline |
-| vsat | Vsat |
 | indoChina | IndoChina |
 
 ### `idnumvn`
