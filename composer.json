@@ -27,6 +27,9 @@
         }
     ],
     "extra": {
-        "bootstrap": "yiiviet\\validator\\Bootstrap"
+        "bootstrap": "yiiviet\\validator\\Bootstrap",
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
     }
 }
