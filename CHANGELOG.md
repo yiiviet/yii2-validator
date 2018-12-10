@@ -1,4 +1,4 @@
-# 1.0.3 đang phát triển
+# 1.0.3 
 
 Lỗi #1: không kiểm tra được đầu số `099` của `gMobile` (vuongxuongminh)
 
