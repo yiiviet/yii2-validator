@@ -93,7 +93,7 @@ class TelNumValidator extends RegularExpressionValidator
     /**
      * @var string Pattern kiểm tra số gmobile.
      */
-    public $gMobile = '^(\+?84|0)?[59]9[\d]{7}$';
+    public $gMobile = '^(\+?84|0)?([59]9|95)[\d]{7}$';
 
     /**
      * @var string Pattern kiểm tra số indochina.
@@ -121,7 +121,7 @@ class TelNumValidator extends RegularExpressionValidator
         $this->exceptTelco = (array)$this->exceptTelco;
 
         $pattern = [];
-        foreach (['viettel', 'mobiFone', 'vinaPhone', 'indoChina', 'gMobile', 'landLine'] as $telco) {
+        foreach (['viettel', 'vinaPhone', 'mobiFone', 'vietNamMobile', 'indoChina', 'gMobile', 'landLine'] as $telco) {
             if ($this->isUse($telco)) {
                 $pattern[] = $this->{$telco};
             }
