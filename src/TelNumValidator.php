@@ -103,7 +103,7 @@ class TelNumValidator extends RegularExpressionValidator
     /**
      * @var string Pattern kiểm tra số điện thoại bàn.
      */
-    public $landLine = '^(\+?84|0)(((20[3-9]|21[0-6]|21[89]|22[0-2]|22[5-9]|23[2-9]|24[2-5]|248|25[12]|25[4-9]|26[0-3]|27[0-7]|28[2-5]|29([0-4]|[67])|299)\d{7})|((246[236]|247[13]|286[23]|287[13])\d{6}))$';
+    public $landLine = '^(\+?84|0)?(((20[3-9]|21[0-6]|21[89]|22[0-2]|22[5-9]|23[2-9]|24[2-5]|248|25[12]|25[4-9]|26[0-3]|27[0-7]|28[2-5]|29([0-4]|[67])|299)\d{7})|((246[236]|247[13]|286[23]|287[13])\d{6}))$';
 
     /**
      * @var bool|string Thiết lập kiểu `format` di động thêm '0' sau khi thực thi kiểm tra hoàn tất (dữ liệu attr hợp lệ).
