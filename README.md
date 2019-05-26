@@ -1,4 +1,7 @@
 # YII2 Việt Nam Validator
+
+> Thông báo chúng tôi đã ngừng phát triển extension này, hãy sử dụng https://github.com/phpviet/yii-validation để thay thế.
+
 **Yii2 Extension hổ trợ bạn kiểm tra dữ liệu đặc thù trong nước ta.**
 
 [![Latest Stable Version](https://poser.pugx.org/yiiviet/yii2-validator/v/stable)](https://packagist.org/packages/yiiviet/yii2-validator)
